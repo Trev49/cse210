@@ -34,16 +34,24 @@ class ReflectingActivity : ActivityManager
             "How can you keep this experience in mind in the future?"
        };
 
-        DateTime startime = DateTime.Now;
-        DateTime endtime = startime.AddSeconds(GetDuration());
+        DateTime StartTime = DateTime.Now;
+        DateTime endtime = StartTime.AddSeconds(GetDuration());
         // int ElaspedTime = 0;
-        while (DateTime.Now < endtime)
+        string filePath = "listedItems.txt";
+
+        using (StreamWriter writer = new StreamWriter(filePath, append: true))
         {
-            string Question = Questions[random.Next(Questions.Length)];
-            Console.WriteLine(Question);
-            string Answer = Console.ReadLine();
-            ShowAnimation(3);
-            // ElaspedTime += 6;
+            writer.WriteLine("----- Reflecting Activity -----");
+            writer.WriteLine($"Start Time: {StartTime}");
+            while (DateTime.Now < endtime)
+            {
+                string Question = Questions[random.Next(Questions.Length)];
+                Console.WriteLine(Question);
+                string Answer = Console.ReadLine();
+                ShowAnimation(3);
+                writer.WriteLine(Answer);
+                // ElaspedTime += 6;
+            }
         }
 
         FinishActivity("Reflection");

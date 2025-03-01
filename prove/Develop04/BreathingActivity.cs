@@ -5,10 +5,10 @@ class BreathingActivity : ActivityManager
     {
         BeginActivity("Breathing", "You will relax yourself by participating in a deep breathing activity for the amount of time that you have set! Relax and let's get started!");
 
-        DateTime startime = DateTime.Now;
-        DateTime endtime = startime.AddSeconds(GetDuration());
+        DateTime StartTime = DateTime.Now;
+        DateTime EndTime = StartTime.AddSeconds(GetDuration());
         // int ElaspedTime = 0;
-        while (DateTime.Now < endtime)
+        while (DateTime.Now < EndTime)
         {
             Console.WriteLine("Inhale");
             ShowAnimation(3);

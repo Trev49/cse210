@@ -25,7 +25,7 @@ class ListingActivity : ActivityManager
 
         using (StreamWriter writer = new StreamWriter(filePath, append: true))
         {
-            writer.WriteLine("----- New Listing Activity -----");
+            writer.WriteLine("----- Listing Activity -----");
             writer.WriteLine($"Start Time: {StartTime}");
             while (DateTime.Now < endtime)
             {
