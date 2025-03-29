@@ -1,9 +1,8 @@
-using System;
-
 class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        Console.WriteLine("Hello Develop05 World!");
+        GameManager manager = new GameManager();
+        manager.Run();
     }
 }
